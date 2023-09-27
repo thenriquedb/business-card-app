@@ -21,6 +21,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.business_card_app.components.AboutCard
 import com.example.business_card_app.components.Header
 import com.example.business_card_app.components.SocialMediaButton
 import com.example.business_card_app.ui.theme.BusinesscardappTheme
@@ -33,7 +34,9 @@ class MainActivity : ComponentActivity() {
 
             Column(modifier = Modifier
                 .fillMaxSize()
-                .background(Color.Black) ) {
+                .background(Color.Black)
+
+            ) {
                     Header(
                         name = "Thiago Henrique Domingues",
                         role="Software developer",
@@ -41,7 +44,7 @@ class MainActivity : ComponentActivity() {
                     )
 
                     Row(
-                        modifier = Modifier.padding(32.dp, top=16.dp),
+                        modifier = Modifier.padding(32.dp),
                         horizontalArrangement = Arrangement.spacedBy(16.dp)
                     ) {
                         SocialMediaButton(painter = painterResource(id = R.drawable.whatsapp), contentDescription = "Whatsapp" )
@@ -50,6 +53,9 @@ class MainActivity : ComponentActivity() {
                         SocialMediaButton(painter = painterResource(id = R.drawable.github), contentDescription = "Github" )
                     }
 
+                    Box(modifier = Modifier.padding(horizontal = 32.dp)) {
+                        AboutCard(text = "React and React Native developer with nearly 4 years of experience, nearing completion of a degree in Computer Science, and actively studying native Android development with Kotlin.\"",)
+                    }
             }
         }
     }
