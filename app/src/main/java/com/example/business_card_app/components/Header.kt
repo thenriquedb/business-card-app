@@ -51,7 +51,7 @@ fun Header(name:String, role: String, image: Painter, modifier: Modifier = Modif
 
         Box(
             modifier = Modifier
-                .padding(32.dp, bottom = 0.dp)
+                .padding(32.dp, bottom = 16.dp)
                 .fillMaxSize(),
             contentAlignment = Alignment.BottomStart,
 
@@ -59,6 +59,7 @@ fun Header(name:String, role: String, image: Painter, modifier: Modifier = Modif
             Column {
                 Text(
                     text = name.uppercase(),
+                    modifier = Modifier.padding(bottom = 4.dp),
                     style = TextStyle(
                         color = Color.White,
                         fontSize = 28.sp,
@@ -70,7 +71,7 @@ fun Header(name:String, role: String, image: Painter, modifier: Modifier = Modif
                     text = role,
                     style = TextStyle(
                         color = Color.White,
-                        fontSize = 16.sp,
+                        fontSize = 18.sp,
                         fontWeight = FontWeight.Normal,
                     )
                 )
