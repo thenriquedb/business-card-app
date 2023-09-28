@@ -8,23 +8,15 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.business_card_app.components.AboutCard
 import com.example.business_card_app.components.Header
 import com.example.business_card_app.components.SocialMediaButton
-import com.example.business_card_app.ui.theme.BusinesscardappTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,10 +39,30 @@ class MainActivity : ComponentActivity() {
                         modifier = Modifier.padding(32.dp),
                         horizontalArrangement = Arrangement.spacedBy(16.dp)
                     ) {
-                        SocialMediaButton(painter = painterResource(id = R.drawable.whatsapp), contentDescription = "Whatsapp" )
-                        SocialMediaButton(painter = painterResource(id = R.drawable.email), contentDescription = "Email" )
-                        SocialMediaButton(painter = painterResource(id = R.drawable.linkedin), contentDescription = "Linkedin" )
-                        SocialMediaButton(painter = painterResource(id = R.drawable.github), contentDescription = "Github" )
+                        SocialMediaButton(
+                            painter = painterResource(id = R.drawable.whatsapp),
+                            onClickLabel = "Send Whatsapp message",
+                            uri ="https://wa.me/55999999999?text=Hello",
+                        )
+
+                        SocialMediaButton(
+                            painter = painterResource(id = R.drawable.email),
+                            onClickLabel = "Send Email",
+                            uri = "mailto:any_email@gmail.com"
+                        )
+
+                        SocialMediaButton(
+                            painter = painterResource(id = R.drawable.linkedin),
+                            onClickLabel = "Open Linkedin profile",
+                            uri = "https://www.linkedin.com/in/thenriquedomingues/"
+                        )
+
+                        SocialMediaButton(
+                            painter = painterResource(id = R.drawable.github),
+                            onClickLabel = "Open Github profile",
+                            uri = "https://github.com/thenriquedb"
+                        )
+
                     }
 
                     Box(modifier = Modifier.padding(horizontal = 32.dp)) {
